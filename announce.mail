@@ -1,0 +1,16 @@
+Nuova versione dei fortunes del SaLUG!
+
+http://www.salug.it/~rastandy/salug-fortunes.tar.gz
+
+Potete generare il file salug.dat con un semplice `make' e poi copiare
+`salug' e `salug.dat' nella vostra directory dei fortunes.
+
+*Utenti Gentoo
+
+Sono disponibili l'ebuild fornito da Francesco Russo e le istruzioni
+per l'installazione al seguente indirizzo:
+
+   http://salug.it/~francescor82/sfortune.htm
+
+Ciao,
+andy

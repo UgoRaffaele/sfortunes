@@ -1,0 +1,148 @@
+                        INSTALLAZIONE DI salug-fortune:
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+NOTA DI PREAMBOlO: 
+
+	Non ci andava di scrivere da zero riguardo all'installazione
+	di un archivio di fortune, così questo file è stato copiato, con qualche 
+	leggera modifica dal pacchetto fortunes-it, disponibile su   
+	ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/fortune-it-1.99.tar.gz
+
+	Si ringrazia Andrea "Zuse" Balestrero, gestore del pacchetto fortune-it
+	e tutti coloro che hanno contribuito negli anni alla crescita dei fortune
+	italiani per lo splendido lavoro fatto... date un'occhiata a:
+	http://www.fortune-it.net/main.html 
+
+	Se non sai nemmeno tu che cosa hai scaricato e che cosa stai leggendo,
+	forse ti conviene vedere il file README...
+
+	Prima di procedere, leggere il file COPYING.
+
+NOTA SUGLI AGGIORNAMENTI: Se state aggiornando una precedente installazione,
+        continuano a valere le operazioni cosi` come sono descritte: 
+	i vecchi file "salug" e "salug.dat", saranno sovrascritti, 
+	com'e` corretto che avvenga.
+        Per semplicita` di gestione, non sono previste patch ".diff" pubbliche.
+	Cercate per novità in mailing list o su 
+
+NOTA SULLE DISTRIBUZIONI GNU/LINUX: Le procedure di installazione qui riportate
+        si riferiscono ad un sistema derivante da una distribuzione
+        Slackware, in cui i file di fortune sono contenuti nella directory
+        "/usr/share/games/fortunes".  Non e` cosi` in tutte le distribuzioni
+        (provate "man fortune", se lo avete).  In particolare, circa la
+        Slackware, devono essere stati precedentemente installati i dischi
+        della serie "Y" ("Games"), con cui viene installato anche il package
+        dei fortune in inglese (se questo e` troppo semplice, per voi, potete
+        sempre rintracciare i sorgenti dei comandi "fortune" e "strfile" e
+        compilarveli, evitando in tal modo l'installazione dei fortune in
+        inglese...).
+	vedi: ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/
+
+
+NOTA NOT-GNU/LINUX: A patto che abbiate un programma "fortune" analogo a quello
+        in GNU/Linux, i salug-fortunes possono 	essere installati ovunque, 
+	sia sui vari Unix che su GNU/Hurd... Teoricamente anche su MS-DOS/Windows, 
+	Amiga,Macintosh, OS/2, MSX, VIC20, ecc. 
+
+NOTA DI (IN)COMPATIBILITA' CON MICRO$OFT WINDOW$: Qualsiasi installazione si
+        scelga, non serve fare il reboot della macchina.  :-)
+
+NOTA FUTILE: Se vi rimane tempo, e se siete collegati ad Internet, segnalate 
+	nella mailing list del SaLUG! https://salug.it/mailman/listinfo/salug
+	che avete installato i salug-fortune.  Cio` non vuole assolutamente
+	comportare alcun tipo di monitoraggio spionistico stile	"Grande Fratello", 
+	ne` puo` in alcun modo compromettere la sicurezza del vostro sistema.  
+	Serve solamente come "incoraggiamento morale" a proseguire: se vediamo 
+	che molta gente usa i nostri fortune, sara' piu' facile e gratificante 
+	continuare ad aggiornare questo package...
+        :-)
+
+1 - INSTALLAZIONE CONVENZIONALE, COME root:
+
+Copiare il file "salug" contenuto nel pacchetto assieme a questo file
+nella directory "/usr/share/games/fortunes/" 
+Se non avete questa directory sul vostro sistema, provate a cercarla con
+altri path equivalenti: ad esempio "/var/lib/games/fortunes" oppure
+"/var/lib/fortunes".  Se non la trovate, possono esservi d'aiuto i comandi
+"which fortune", "whereis fortunes" oppure "locate fortune").
+
+	cp -v * /usr/share/games/fortunes/
+
+Generare i file ".dat" che indicizzano i fortune (si suppone qui che si stia
+utilizzando una shell bash):
+
+	cd /usr/share/games/fortunes/       (o directory equivalente)
+	for SINGOLOFILE in * ; do strfile $SINGOLOFILE ; done
+
+Se si vuole mantenere i fortune originali, non ci sono altri passi da fare
+(verra` visualizzato, ogni volta, un fortune preso a caso tra gli archivi presenti).
+Se si vogliono eliminare alcuni archivi dei fortune, basta cancellare i relativi 
+file ".dat", ed eventualmente gzippare l'originale in chiaro 
+(il comando "fortune" visualizza una frase a caso tra i soli file che,
+in "/usr/share/games/fortunes/" o equivalenti, hanno un file omonimo 
+con estensione ".dat"):
+
+	rm -f fortunes.dat fortunes-o.dat startrek.dat zippy.dat
+	(piu` rm di altri eventuali file ".dat" di fortune inglesi)
+
+	gzip -v9 fortunes fortunes-o startrek zippy
+	(piu` gzip di altri eventuali file fortune inglesi)
+
+Finito!  Provare manualmente dando semplicemente il comando "fortune".
+
+Verificare che il comando "fortune" venga lanciato nei file .*rc che vengono
+eseguiti quando la vostra shell di login si avvia (vedere i file "/etc/login",
+"/etc/profile", "/etc/bashrc", "$HOME/.bashrc", "$HOME/.bash_profile",
+"$HOME/.cshrc", o ecc.).
+
+Opzionalmente potete decidere che la scelta dell'archivio da cui attingere
+per i fortune non sia proprio "casuale", influenzandolo con le percentuali,
+as esempio: fortune 70% italia 10% salug 10% zozzital 10% fortunes
+
+Finito davvero!
+
+2 - INSTALLAZIONE "NON CONVENZIONALE" PER SINGOLO UTENTE:
+
+Se non si ha accesso come root, e la propria eventuale quota utente lo
+permette, si puo` ugualmente installare i salug-fortune.
+
+Copiare il file "salug" in una propria sottodirectory 
+(che io chiamerei "~/.fortunes", ma non e` obbligatorio...).
+
+	mkdir ~/.fortunes
+	cp -v salug ~/.fortunes
+
+Generare i file ".dat" che indicizzano i fortune:
+
+	cd ~/.fortunes
+	strfile salug 
+
+Aggiungere il comando
+
+	fortune ~/.fortunes
+
+al proprio file "~/.bash_profile" (se si usa la "bash" come shell di login)
+od a "~/.login" (se si usa la "csh", "tcsh" o derivate come shell di login),
+avendo cura di eliminare dai suddetti file la precedente chiamata "fortune".
+Se il file di inizializzazione corrispondente alla vostra shell di login non
+esiste, andra` creato, copiandolo da quello di sistema comune per tutti gli
+utenti, eseguito di default ("/etc/profile" o "/etc/login" rispettivamente).
+(Se utilizzate una shell di login qui non menzionata, fate riferimento al
+suo manuale "man <nome_shell>" oppure "info <nome_shell>" per sapere i(l) file
+di inizializzazione.)
+
+Opzionalmente potete decidere che la scelta dell'archivio da cui attingere
+per i fortune non sia proprio "casuale", influenzandolo con le percentuali,
+as esempio: fortune 70% italia 10% salug 10% zozzital 10% fortunes
+
+Finito!
+
+--
+Taurisano, 14 gennaio 2004
+
+Adattamento per i salug-fortune
+Carlo Palma & Rastandy
+E-mail: carlopalma@salug.it & rastandy@salug.it
+
+Documento originale scritto da:
+Andrea `Zuse' Balestrero
+Web: http://www.fortune-it.net/

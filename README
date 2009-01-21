@@ -1,0 +1,46 @@
+			salug-fortune README:
+			~~~~~~~~~~~~~~~~~~~~
+
+-------------------------------------------------------------------------------
+
+        Per l'installazione, fare riferimento al file "INSTALLAZIONE".
+
+-------------------------------------------------------------------------------
+
+Questo archivio contiene i file di fortune del SaLUG! 
+(noti anche come "s-fortune")
+
+	Si tratta di un piccolo archivio di aneddoti pressoché indecifrabili se 
+non si conosce gli interessati, qualche battuta di scarso valore umoristico e qualche 
+citazione, che purtroppo si prevede tenderanno ad aumentare di numero rapidamente. 
+Questa roba viene visualizzata, tramite il comando "fortune", ogni volta che una 
+shell di login viene aperta.  
+E' basato sui file fortune originali dell'archivio bsd-games presente anche 
+al SunSite (vedi ftp://sunsite.unc.edu/pub/Linux/games/bsd-games*), e che tra 
+l'altro contiene i programmini "fortune" e "strfile" necessari per salug-fortune
+(per questi, vedere anche ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/ e
+quindi il pacchetto fortune-mod*) mentre i sorgenti di strfile sono contenuti nella 
+cartella utils di questo stesso pacchetto.
+
+Si consiglia vivamente di installare insieme al presente pacchetto anche gli archivi 
+fortune-it, recentemente aggiornati dal mantenitore Andre "Zuse" Balestrero.
+Home Page - URL di riferimento: http://www.fortune-it.net
+ftp://sunsite.unc.edu/pub/Linux/games/amusements/fortune/
+
+In attesa di aggiornare il sito del SaLUG! (vedi www.salug.it) con una pagina dedicata 
+al progetto (magari wiki) vi chiediamo di contribuire attraverso la mailing-list del SaLUG!
+a cui potete iscrivervi liberamente (vedi https://salug.it/mailman/listinfo/salug)
+In particolare vi chiediamo di inviare citazioni, battute, aneddoti,  o quant'altro in 
+italiano, dialetto salentino o come preferite, ma che sia in qualche modo legato alle
+attivita dell'Associzione Culturale Salento GNU/Linux Users Group...
+
+
+
+Attuali manutentori, manteiners, nonche' mantenitori del salug-fortune (aka sfortune):
+	Carlo Palma (carlopalma@salug.it)
+	Rastandy (rastandy@salug.it)
+	Much0 (much0@salug.it)
+	Checco (checco@salug.it)
+
+URL temporanea di riferimento: dove trovare l'ultima versione di salug-fortune:
+	http://www.salug.it/~carlopalma/kit/

@@ -1,0 +1,118 @@
+Guida pratica a GNU Arch per il progetto Sfortune
+
+GNU Arch e' un sistema di controllo delle revisioni dei sorgenti come
+CVS.  Al contrario di questo pero' esso e' un sistema estremamente
+avanzato ed innovativo ed ha un design da premio Nobel :-).  Permette
+lo sviluppo distribuito e offline e soprattutto e' fichissimo :-)
+
+Per il suo design i suoi avanzati sistemi di merging, possiamo
+definire arch il coltellino svizzero dei revision control systems.
+Nella sua incarnazione di cui discuteremo in questo piccolo tutorial
+(tla) esso puo' sembrare complesso nell'utilizzo; in realta' si tratta
+di comprenderne bene i concetti alle spalle e trovare l'utilizzo piu'
+adatto al proprio progetto.  Quando sarete abbastanza pratici nell'uso
+di arch, con il vostro nuovo coltellino svizzero a disposizione,
+potrete fare i Gnu Guyver della situazione ;-)
+
+Per scaricare i sorgenti e la documentazione potete andare sul sito:
+http://www.gnuarch.org oppure se avete la fortuna di essere utenti
+Debian GNU/Linux vi basta un:
+
+andy@onosendai:~$ apt-get install tla tla-doc
+
+Fatto cio' bisogna fornire ad arch la propria identita' in questo
+modo:
+
+andy@onosendai:~$ tla my-id "Micio Bello <e.bamboccione@email.org>
+
+Ora bisogna creare il proprio archivio personale in cui metterete
+tutti i vostri bellissimi progetti (compreso il fichissimo sfortune
+:-):
+
+andy@onosendai:~$ tla make-archive bamboccione@email.org--2005 \
+		      /home/ciccio/archives/2005
+
+andy@onosendai:~$ tla my-default-archive bamboccione@email.org--2005
+
+dopodiche' bisogna registrare l'archivio dove si trova il nostro
+progetto:
+
+andy@onosendai:~$ tla register-archive
+		      http://salug.it/~rastandy/arch-archives/\
+		      rastandy@salug.it--public-2005
+
+e creare un "branch" (un ramo di sviluppo) del nostro progetto:
+
+andy@onosendai:~$ tla tag -S \
+rastandy@salug.it--public-2005/sfortune--main--0.1 \
+sfortune--my-branch--0.1
+
+Bene, ora potete lavorare sul vostro branch in questo modo:
+
+andy@onosendai:~$ tla get sfortune--my-branch--0.1 sfortune
+andy@onosendai:~$ cd sfortune
+
+aggiungete i fortunes che volete:
+
+andy@onosendai:~$ emacs salug
+
+scrivete tanti bei fortunes... e alla fine effettuate il commit sul
+vostro branch,ma prima assicuratevi di avere l'ultima versione del
+ramo main:
+
+andy@onosendai:~$ tla star-merge \
+rastandy@salug.it--public-2005/sfortune--main--0.1 
+
+e quindi:
+
+andy@onosendai:~$ tla commit -L "tanti bei fortunes aggiunti"
+
+Ok, adesso avete 2 possibilita': O create un changeset:
+
+andy@onosendai:~$ tla get-changeset sfortunes--my-branch--0.1--patch-1 \
+		       my-changeset 
+
+lo comprimete:
+
+andy@onosendai:~$ tar czvf my-changeset.tar.gz my-changeset
+
+e lo mettete in attachment ad una mail cosi' composta:
+
+-------------------------------------------------------------------------------
+From: "Micio Bello" <e.bamboccione@email.org> 
+To: rastandy@salug.it,carlopalma@salug.it ...oppure: salug@salug.it
+Subject: [sfortune] nuovi fortunes..o quello che vi pare
+
+...breve spiegazione...del changeset....
+
+*changeset in attachment.
+-------------------------------------------------------------------------------
+
+oppure vi create un mirror del vostro branch su di un server e spedite
+una mail del tipo:
+
+-------------------------------------------------------------------------------
+From: "Micio Bello" <e.bamboccione@email.org> 
+To: rastandy@salug.it,carlopalma@salug.it ...oppure: salug@salug.it
+Subject: [sfortune] nuovi fortunes..o quello che vi pare
+
+Archive-URI: http://myserverweb.org/~micio/archives/bamboccione@email.org--2005
+Revision: bamboccione@email.org--2005/sfortunes--my-branch--0.1--patch-1
+
+...breve spiegazione...del changeset....
+
+-------------------------------------------------------------------------------
+
+Per la creazione del mirror vi rimando al manuale che trovate su:
+
+    http://regexps.srparish.net/tutorial-tla/arch.html 
+(la pagina di manuale sui mirror e': "Shared and Public Archives")
+
+e alle wikipages:
+       
+      wiki.gnuarch.org
+
+
+Buon GNU/Hacking :-)
+
+rastandy

@@ -1,0 +1,69 @@
+                          salug-fortune COPYING-POLICY:
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Questo package non contiene software, sorgenti di programmi ne' alcun tipo di
+binari eseguibili.
+
+Tuttavia, noi NON FORNIAMO ALCUNA GARANZIA sugli effetti delle vostre azioni
+nell'esecuzione dell'installazione con i privilegi di root o di utente
+normale.
+Seguite le istruzioni nel file INSTALLAZIONE a vostro rischio e pericolo
+(se fate qualcosa di non voluto, come cancellare un file importante o
+corrompere ogni qualunque informazione non correlata ai file di fortune,
+non ritenete noi responsabili).
+
+Non desideriamo che alcuno venga offeso dal contenuto di questi file di
+fortune.  
+
+I file contenuti qui non sono stati registrati sotto copyright, dal momento
+che essi sono la raccolta di citazioni di cui, praticamente interamente, noi
+non siamo autori.  (Cioe', e' principalmente la raccolta del lavoro di altre
+persone.)
+Il nome di ogni autore e fonte conosciuti per la singola citazione sono
+scritti in calce alla citazione medesima.
+Questa e' un'opera amatoriale senza scopo di lucro.
+Non si intende violare alcun eventuale copyright.
+
+Anzi, vi invitiamo a cercare ed utilizzare altri fortune, come il vasto pacchetto
+fortune-it (da cui abbiamo preso, quasi totalmente, i file di istruzioni che 
+state leggendo, grazie Zuse!)
+
+
+Cmq, i mantainers del pacchetto hanno deciso di attuare una politica di gestione
+molto "cool" in questo periodo... infatti il pacchetto è mantenuto con doppia licenza!
+
+Se lo utilizzate senza "trarne beneficio"... consideratelo sotto LICENZA A
+Altrimenti... consideratelo sotto LICENZA B
+(ATTENZIONE: "trarne beneficio" è un criterio di valutazione brevettato, ed inopinabile! 
+secondo quanto stabilito dal "Decreto Urbani" a riguardo.)
+
+
+		=====================
+		===   LICENZA A   ===
+		=====================
+
+Considerate freeware (public domain) questo package.
+Ne potete fare quello che volete.
+Potete copiare, modificare e ridistribuire fortune-it liberamente e
+gratuitamente, ma sarebbe una buona idea specificare da qualche parte chi
+siete e che tipo di modifica avete fatto (se volete apportare modifiche),
+anche se in effetti il modo migliore per aggiungere citazioni e battute e'
+quello di spedirle alla mailing list del SaLUG!, giusto?  :-)
+
+
+
+		=====================
+		===   LICENZA B   ===
+		=====================
+
+Questo pacchetto è da considerarsi sotto tutela della licenza 
+"Free... as in beer!" Cioé è gratuito per qualsiasi uso, anche commerciale, 
+però siete moralmente ed eticamente obbligati ad offrire una birra, alla 
+prima occasione plausibile, all'autore o a chi ha inserito il fortune 
+che vi ha fatto piacere leggere... 
+Qualora il suddetto non sia intenzionato ad accettare la birra offertagli,
+può nominare un terzo beneficiario della donazione....
+Qualora il terzo beneficiario non sia nominabile o reperibile la birra viene
+donata automaticamente ai manteiners... :P
+Se volete diventare manteiners... postate la richiesta sulla mailing list del SaLUG!
