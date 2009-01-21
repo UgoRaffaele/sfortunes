@@ -132,7 +132,7 @@ much0: Eccovi il mio ack...  :D
           .0.. .... = ECN-Echo: Not set
           ..0. .... = Urgent: Not set
           ...1 .... = Acknowledgment: Set
-            .... 0... = Push: Not set
+          .... 0... = Push: Not set
           .... .0.. = Reset: Not set
           .... ..0. = Syn: Not set
           .... ...0 = Fin: Not set
